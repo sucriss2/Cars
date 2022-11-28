@@ -16,12 +16,14 @@
 		8C50022E2934FAD0003A5774 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C50022D2934FAD0003A5774 /* Coordinator.swift */; };
 		8C5002302934FB49003A5774 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C50022F2934FB49003A5774 /* AppCoordinator.swift */; };
 		8C500232293502D3003A5774 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C500231293502D3003A5774 /* LoginCoordinator.swift */; };
-		8C50023E29350685003A5774 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8C50023D29350685003A5774 /* SnapKit */; };
 		8C500243293506F0003A5774 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 8C500242293506F0003A5774 /* Nimble */; };
 		8C500245293506F0003A5774 /* Nimble-Snapshots in Frameworks */ = {isa = PBXBuildFile; productRef = 8C500244293506F0003A5774 /* Nimble-Snapshots */; };
 		8C500247293506F0003A5774 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 8C500246293506F0003A5774 /* Quick */; };
-		8C50024F2935071C003A5774 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8C50024E2935071C003A5774 /* SnapKit */; };
-		8C500255293507A4003A5774 /* SnapKit-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 8C500253293507A4003A5774 /* SnapKit-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		8C50025A293508DB003A5774 /* LabeledTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C500259293508DB003A5774 /* LabeledTextFieldView.swift */; };
+		8C50025D293509B3003A5774 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C50025C293509B3003A5774 /* CodeView.swift */; };
+		8C50025F29350E72003A5774 /* loginLabelViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C50025E29350E72003A5774 /* loginLabelViewTest.swift */; };
+		8C500269293512F7003A5774 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8C500268293512F7003A5774 /* SnapKit */; };
+		8C50027129351710003A5774 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8C50027029351710003A5774 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +43,16 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8C500255293507A4003A5774 /* SnapKit-Dynamic in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C50026629351217003A5774 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,6 +72,9 @@
 		8C50022D2934FAD0003A5774 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8C50022F2934FB49003A5774 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		8C500231293502D3003A5774 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		8C500259293508DB003A5774 /* LabeledTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabeledTextFieldView.swift; sourceTree = "<group>"; };
+		8C50025C293509B3003A5774 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
+		8C50025E29350E72003A5774 /* loginLabelViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginLabelViewTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C50023E29350685003A5774 /* SnapKit in Frameworks */,
+				8C50027129351710003A5774 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,7 +91,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C500247293506F0003A5774 /* Quick in Frameworks */,
-				8C50024F2935071C003A5774 /* SnapKit in Frameworks */,
+				8C500269293512F7003A5774 /* SnapKit in Frameworks */,
 				8C500243293506F0003A5774 /* Nimble in Frameworks */,
 				8C500245293506F0003A5774 /* Nimble-Snapshots in Frameworks */,
 			);
@@ -110,10 +124,10 @@
 			children = (
 				8C5001FD2934F9ED003A5774 /* AppDelegate.swift */,
 				8C5001FF2934F9ED003A5774 /* SceneDelegate.swift */,
-				8C50022D2934FAD0003A5774 /* Coordinator.swift */,
-				8C50022F2934FB49003A5774 /* AppCoordinator.swift */,
-				8C500231293502D3003A5774 /* LoginCoordinator.swift */,
-				8C5002012934F9ED003A5774 /* LoginViewController.swift */,
+				8C50025C293509B3003A5774 /* CodeView.swift */,
+				8C50025629350846003A5774 /* Coordinator */,
+				8C50026029350F05003A5774 /* Views */,
+				8C50025729350853003A5774 /* Screens */,
 				8C5002062934F9EF003A5774 /* Assets.xcassets */,
 				8C5002082934F9EF003A5774 /* LaunchScreen.storyboard */,
 				8C50020B2934F9EF003A5774 /* Info.plist */,
@@ -125,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				8C5002142934F9EF003A5774 /* CarsTests.swift */,
+				8C50025E29350E72003A5774 /* loginLabelViewTest.swift */,
 			);
 			path = CarsTests;
 			sourceTree = "<group>";
@@ -134,6 +149,41 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8C50025629350846003A5774 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				8C50022D2934FAD0003A5774 /* Coordinator.swift */,
+				8C50022F2934FB49003A5774 /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		8C50025729350853003A5774 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				8C50025829350865003A5774 /* Login */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		8C50025829350865003A5774 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8C500231293502D3003A5774 /* LoginCoordinator.swift */,
+				8C5002012934F9ED003A5774 /* LoginViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		8C50026029350F05003A5774 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8C500259293508DB003A5774 /* LabeledTextFieldView.swift */,
+			);
+			name = Views;
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +196,7 @@
 				8C5001F62934F9ED003A5774 /* Sources */,
 				8C5001F72934F9ED003A5774 /* Frameworks */,
 				8C5001F82934F9ED003A5774 /* Resources */,
+				8C50026629351217003A5774 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -153,7 +204,7 @@
 			);
 			name = Cars;
 			packageProductDependencies = (
-				8C50023D29350685003A5774 /* SnapKit */,
+				8C50027029351710003A5774 /* SnapKit */,
 			);
 			productName = Cars;
 			productReference = 8C5001FA2934F9ED003A5774 /* Cars.app */;
@@ -178,8 +229,7 @@
 				8C500242293506F0003A5774 /* Nimble */,
 				8C500244293506F0003A5774 /* Nimble-Snapshots */,
 				8C500246293506F0003A5774 /* Quick */,
-				8C50024E2935071C003A5774 /* SnapKit */,
-				8C500253293507A4003A5774 /* SnapKit-Dynamic */,
+				8C500268293512F7003A5774 /* SnapKit */,
 			);
 			productName = CarsTests;
 			productReference = 8C5002102934F9EF003A5774 /* CarsTests.xctest */;
@@ -258,7 +308,9 @@
 				8C5002022934F9ED003A5774 /* LoginViewController.swift in Sources */,
 				8C5002302934FB49003A5774 /* AppCoordinator.swift in Sources */,
 				8C5001FE2934F9ED003A5774 /* AppDelegate.swift in Sources */,
+				8C50025A293508DB003A5774 /* LabeledTextFieldView.swift in Sources */,
 				8C5002002934F9ED003A5774 /* SceneDelegate.swift in Sources */,
+				8C50025D293509B3003A5774 /* CodeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C5002152934F9EF003A5774 /* CarsTests.swift in Sources */,
+				8C50025F29350E72003A5774 /* loginLabelViewTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,7 +471,7 @@
 				INFOPLIST_FILE = Cars/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -446,7 +499,7 @@
 				INFOPLIST_FILE = Cars/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -570,11 +623,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8C50023D29350685003A5774 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8C50023C29350685003A5774 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
 		8C500242293506F0003A5774 /* Nimble */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8C50023329350601003A5774 /* XCRemoteSwiftPackageReference "Nimble" */;
@@ -590,15 +638,15 @@
 			package = 8C5002392935065C003A5774 /* XCRemoteSwiftPackageReference "Quick" */;
 			productName = Quick;
 		};
-		8C50024E2935071C003A5774 /* SnapKit */ = {
+		8C500268293512F7003A5774 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8C50023C29350685003A5774 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		8C500253293507A4003A5774 /* SnapKit-Dynamic */ = {
+		8C50027029351710003A5774 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8C50023C29350685003A5774 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
