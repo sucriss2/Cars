@@ -1,5 +1,5 @@
 //
-//  LabeledTextFieldView.swift
+//  LabeledTextField.swift
 //  Cars
 //
 //  Created by Suh on 28/11/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class LabeledTextFieldView: UIView {
+final class LabeledTextField: UIView {
 
     lazy var textLabel: UILabel = {
         let view = UILabel(frame: .zero)
@@ -58,7 +58,7 @@ final class LabeledTextFieldView: UIView {
 
 }
 
-extension LabeledTextFieldView: CodeView {
+extension LabeledTextField: CodeView {
     func buidViewHierarchy() {
         viewStack.addArrangedSubview(textLabel)
         viewStack.addArrangedSubview(textField)
@@ -69,19 +69,8 @@ extension LabeledTextFieldView: CodeView {
     func setupConstraints() {
         self.backgroundColor = .white
 
-
-//        viewStack.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-//        viewStack.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16).isActive = true
-//        viewStack.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16).isActive = true
-//        viewStack.bottomAnchor.constraint(equalTo: separetorView.topAnchor,constant: -8).isActive = true
-//
-//        separetorView.heightAnchor.constraint(equalToConstant: 2).isActive = true
-//        separetorView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-//        separetorView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-//        separetorView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-
         NSLayoutConstraint.activate([
-            viewStack.topAnchor.constraint(equalTo: self.topAnchor),
+            viewStack.topAnchor.constraint(equalTo: self.topAnchor, constant: 8),
             viewStack.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16),
             viewStack.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16),
             viewStack.bottomAnchor.constraint(equalTo: separetorView.topAnchor,constant: -8),
