@@ -12,12 +12,12 @@ class ListCarsViewController: UIViewController {
     lazy var tableview: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.isScrollEnabled = false
-        tableView.separatorStyle = .singleLine
-        tableView.separatorColor = .white
-        //tableView.delegate = self
+//        tableView.isScrollEnabled = false
+//        tableView.separatorColor = .white
+        tableView.scrollsToTop = true
+        tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(ListCarsTableViewCell.self, forCellReuseIdentifier: ListCarsTableViewCell.identifier)
         return tableView
     }()
 
@@ -26,7 +26,6 @@ class ListCarsViewController: UIViewController {
         tableview.backgroundColor = .purple
         view.addSubview(tableview)
         configConstraints()
-
     }
 
     override func viewDidLayoutSubviews() {
@@ -53,12 +52,15 @@ extension ListCarsViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
-            withIdentifier: "cell", for: indexPath)
+            withIdentifier: ListCarsTableViewCell.identifier, for: indexPath)
 //        ) as? ListCarsTableViewCell else {
 //            fatalError()
 //        }
-        cell.textLabel?.text = "Hello World"
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 
 

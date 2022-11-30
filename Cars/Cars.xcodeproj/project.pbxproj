@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C45FE2229380A2600273DAD /* Cars in Resources */ = {isa = PBXBuildFile; fileRef = 8C5001FA2934F9ED003A5774 /* Cars */; };
+		8C45FE2329380A2C00273DAD /* Cars.swiftmodule in Resources */ = {isa = PBXBuildFile; fileRef = 8C5002102934F9EF003A5774 /* Cars.swiftmodule */; };
+		8C45FE2429380BDF00273DAD /* Cars.swiftmodule in Resources */ = {isa = PBXBuildFile; fileRef = 8C5002102934F9EF003A5774 /* Cars.swiftmodule */; };
+		8C45FE2729380D0500273DAD /* SnapKit-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 8C45FE2529380D0500273DAD /* SnapKit-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		8C5001FE2934F9ED003A5774 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5001FD2934F9ED003A5774 /* AppDelegate.swift */; };
 		8C5002002934F9ED003A5774 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5001FF2934F9ED003A5774 /* SceneDelegate.swift */; };
 		8C5002022934F9ED003A5774 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5002012934F9ED003A5774 /* LoginViewController.swift */; };
@@ -19,14 +23,19 @@
 		8C500243293506F0003A5774 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 8C500242293506F0003A5774 /* Nimble */; };
 		8C500245293506F0003A5774 /* Nimble-Snapshots in Frameworks */ = {isa = PBXBuildFile; productRef = 8C500244293506F0003A5774 /* Nimble-Snapshots */; };
 		8C500247293506F0003A5774 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 8C500246293506F0003A5774 /* Quick */; };
-		8C50025A293508DB003A5774 /* LabeledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C500259293508DB003A5774 /* LabeledTextField.swift */; };
 		8C50025D293509B3003A5774 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C50025C293509B3003A5774 /* CodeView.swift */; };
 		8C50025F29350E72003A5774 /* loginLabelViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C50025E29350E72003A5774 /* loginLabelViewTest.swift */; };
 		8C500269293512F7003A5774 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8C500268293512F7003A5774 /* SnapKit */; };
 		8C50027129351710003A5774 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8C50027029351710003A5774 /* SnapKit */; };
 		8C50027629354A46003A5774 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C50027529354A46003A5774 /* LoginView.swift */; };
 		8C50027829354EB7003A5774 /* LoginViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C50027729354EB7003A5774 /* LoginViewSpec.swift */; };
-		8C9CE19929356E720055F265 /* UnderlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CE19829356E720055F265 /* UnderlinedButton.swift */; };
+		8C9CE1A12937A1200055F265 /* LabeledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CE1A02937A1200055F265 /* LabeledTextField.swift */; };
+		8C9CE1A32937A1340055F265 /* UnderlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CE1A22937A1340055F265 /* UnderlinedButton.swift */; };
+		8C9CE1A52937A1540055F265 /* ListCarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CE1A42937A1540055F265 /* ListCarsViewController.swift */; };
+		8C9CE1A72937A17A0055F265 /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CE1A62937A17A0055F265 /* ListCoordinator.swift */; };
+		8C9CE1A92937A5E40055F265 /* ListCarsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CE1A82937A5E40055F265 /* ListCarsTableViewCell.swift */; };
+		8C9CE1AB2937D1660055F265 /* ListCarstCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CE1AA2937D1660055F265 /* ListCarstCellView.swift */; };
+		8C9CE1AD2937D8170055F265 /* ListCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CE1AC2937D8170055F265 /* ListCellSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +55,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				8C45FE2729380D0500273DAD /* SnapKit-Dynamic in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,24 +73,29 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8C5001FA2934F9ED003A5774 /* Cars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cars.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C5001FA2934F9ED003A5774 /* Cars */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Cars; path = ../../../../../../../projetos_gits/Cars/Cars; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C5001FD2934F9ED003A5774 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C5001FF2934F9ED003A5774 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8C5002012934F9ED003A5774 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8C5002012934F9ED003A5774 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../Login/LoginViewController.swift; sourceTree = "<group>"; };
 		8C5002062934F9EF003A5774 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C5002092934F9EF003A5774 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C50020B2934F9EF003A5774 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8C5002102934F9EF003A5774 /* CarsTests.swiftmodule */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarsTests.swiftmodule; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C5002102934F9EF003A5774 /* Cars.swiftmodule */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Cars.swiftmodule; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C5002142934F9EF003A5774 /* CarsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsTests.swift; sourceTree = "<group>"; };
 		8C50022D2934FAD0003A5774 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8C50022F2934FB49003A5774 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		8C500231293502D3003A5774 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
-		8C500259293508DB003A5774 /* LabeledTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabeledTextField.swift; sourceTree = "<group>"; };
+		8C500231293502D3003A5774 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginCoordinator.swift; path = ../Login/LoginCoordinator.swift; sourceTree = "<group>"; };
 		8C50025C293509B3003A5774 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		8C50025E29350E72003A5774 /* loginLabelViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginLabelViewTest.swift; sourceTree = "<group>"; };
-		8C50027529354A46003A5774 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		8C50027529354A46003A5774 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = ../Login/LoginView.swift; sourceTree = "<group>"; };
 		8C50027729354EB7003A5774 /* LoginViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewSpec.swift; sourceTree = "<group>"; };
-		8C9CE19829356E720055F265 /* UnderlinedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedButton.swift; sourceTree = "<group>"; };
+		8C9CE1A02937A1200055F265 /* LabeledTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LabeledTextField.swift; path = Cars/TextFields/LabeledTextField.swift; sourceTree = SOURCE_ROOT; };
+		8C9CE1A22937A1340055F265 /* UnderlinedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnderlinedButton.swift; path = Cars/Buttons/UnderlinedButton.swift; sourceTree = SOURCE_ROOT; };
+		8C9CE1A42937A1540055F265 /* ListCarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListCarsViewController.swift; path = ../../List/ListCarsViewController.swift; sourceTree = "<group>"; };
+		8C9CE1A62937A17A0055F265 /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListCoordinator.swift; path = ../../List/ListCoordinator.swift; sourceTree = "<group>"; };
+		8C9CE1A82937A5E40055F265 /* ListCarsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListCarsTableViewCell.swift; path = ../../List/ListCarsTableViewCell.swift; sourceTree = "<group>"; };
+		8C9CE1AA2937D1660055F265 /* ListCarstCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListCarstCellView.swift; path = ../../List/ListCarstCellView.swift; sourceTree = "<group>"; };
+		8C9CE1AC2937D8170055F265 /* ListCellSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,8 +134,8 @@
 		8C5001FB2934F9ED003A5774 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8C5001FA2934F9ED003A5774 /* Cars.app */,
-				8C5002102934F9EF003A5774 /* CarsTests.swiftmodule */,
+				8C5001FA2934F9ED003A5774 /* Cars */,
+				8C5002102934F9EF003A5774 /* Cars.swiftmodule */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -147,6 +162,7 @@
 				8C5002142934F9EF003A5774 /* CarsTests.swift */,
 				8C50025E29350E72003A5774 /* loginLabelViewTest.swift */,
 				8C50027729354EB7003A5774 /* LoginViewSpec.swift */,
+				8C9CE1AC2937D8170055F265 /* ListCellSpec.swift */,
 			);
 			path = CarsTests;
 			sourceTree = "<group>";
@@ -170,9 +186,11 @@
 		8C50025729350853003A5774 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				8C9CE19F2937A0880055F265 /* List */,
 				8C50025829350865003A5774 /* Login */,
 			);
-			path = Screens;
+			name = Screens;
+			path = Screens/Screens;
 			sourceTree = "<group>";
 		};
 		8C50025829350865003A5774 /* Login */ = {
@@ -198,17 +216,30 @@
 		8C500295293569D4003A5774 /* TextFields */ = {
 			isa = PBXGroup;
 			children = (
-				8C500259293508DB003A5774 /* LabeledTextField.swift */,
+				8C9CE1A02937A1200055F265 /* LabeledTextField.swift */,
 			);
-			path = TextFields;
+			name = TextFields;
+			path = ../TextFields;
 			sourceTree = "<group>";
 		};
 		8C9CE19A29356EDD0055F265 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				8C9CE19829356E720055F265 /* UnderlinedButton.swift */,
+				8C9CE1A22937A1340055F265 /* UnderlinedButton.swift */,
 			);
-			path = Buttons;
+			name = Buttons;
+			path = ../Buttons;
+			sourceTree = "<group>";
+		};
+		8C9CE19F2937A0880055F265 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				8C9CE1A42937A1540055F265 /* ListCarsViewController.swift */,
+				8C9CE1A62937A17A0055F265 /* ListCoordinator.swift */,
+				8C9CE1A82937A5E40055F265 /* ListCarsTableViewCell.swift */,
+				8C9CE1AA2937D1660055F265 /* ListCarstCellView.swift */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,7 +263,7 @@
 				8C50027029351710003A5774 /* SnapKit */,
 			);
 			productName = Cars;
-			productReference = 8C5001FA2934F9ED003A5774 /* Cars.app */;
+			productReference = 8C5001FA2934F9ED003A5774 /* Cars */;
 			productType = "com.apple.product-type.application";
 		};
 		8C50020F2934F9EF003A5774 /* CarsTests */ = {
@@ -255,9 +286,10 @@
 				8C500244293506F0003A5774 /* Nimble-Snapshots */,
 				8C500246293506F0003A5774 /* Quick */,
 				8C500268293512F7003A5774 /* SnapKit */,
+				8C45FE2529380D0500273DAD /* SnapKit-Dynamic */,
 			);
 			productName = CarsTests;
-			productReference = 8C5002102934F9EF003A5774 /* CarsTests.swiftmodule */;
+			productReference = 8C5002102934F9EF003A5774 /* Cars.swiftmodule */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -309,7 +341,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C45FE2229380A2600273DAD /* Cars in Resources */,
 				8C50020A2934F9EF003A5774 /* LaunchScreen.storyboard in Resources */,
+				8C45FE2429380BDF00273DAD /* Cars.swiftmodule in Resources */,
 				8C5002072934F9EF003A5774 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +352,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C45FE2329380A2C00273DAD /* Cars.swiftmodule in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,16 +363,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C9CE1A32937A1340055F265 /* UnderlinedButton.swift in Sources */,
 				8C500232293502D3003A5774 /* LoginCoordinator.swift in Sources */,
 				8C50022E2934FAD0003A5774 /* Coordinator.swift in Sources */,
+				8C9CE1AB2937D1660055F265 /* ListCarstCellView.swift in Sources */,
 				8C5002022934F9ED003A5774 /* LoginViewController.swift in Sources */,
 				8C50027629354A46003A5774 /* LoginView.swift in Sources */,
+				8C9CE1A52937A1540055F265 /* ListCarsViewController.swift in Sources */,
 				8C5002302934FB49003A5774 /* AppCoordinator.swift in Sources */,
 				8C5001FE2934F9ED003A5774 /* AppDelegate.swift in Sources */,
-				8C50025A293508DB003A5774 /* LabeledTextField.swift in Sources */,
+				8C9CE1A72937A17A0055F265 /* ListCoordinator.swift in Sources */,
 				8C5002002934F9ED003A5774 /* SceneDelegate.swift in Sources */,
-				8C9CE19929356E720055F265 /* UnderlinedButton.swift in Sources */,
+				8C9CE1A92937A5E40055F265 /* ListCarsTableViewCell.swift in Sources */,
 				8C50025D293509B3003A5774 /* CodeView.swift in Sources */,
+				8C9CE1A12937A1200055F265 /* LabeledTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C9CE1AD2937D8170055F265 /* ListCellSpec.swift in Sources */,
 				8C5002152934F9EF003A5774 /* CarsTests.swift in Sources */,
 				8C50025F29350E72003A5774 /* loginLabelViewTest.swift in Sources */,
 				8C50027829354EB7003A5774 /* LoginViewSpec.swift in Sources */,
@@ -651,6 +691,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8C45FE2529380D0500273DAD /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C50023C29350685003A5774 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
 		8C500242293506F0003A5774 /* Nimble */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8C50023329350601003A5774 /* XCRemoteSwiftPackageReference "Nimble" */;

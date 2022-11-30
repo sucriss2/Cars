@@ -25,9 +25,13 @@ class AppCoordinator: Coordinator {
         windows?.rootViewController = navigationController
         windows?.makeKeyAndVisible()
 
-        let loginCoordinator = LoginCoordinator(navigationController: navigationController)
-        loginCoordinator.start()
-        childCoordinator = loginCoordinator
+//        let loginCoordinator = LoginCoordinator(navigationController: navigationController)
+//        loginCoordinator.start()
+//        childCoordinator = loginCoordinator
+
+        let listCoordinator = ListCoordinator(navigationController: navigationController)
+        listCoordinator.start()
+        childCoordinator = listCoordinator
     }
 
 }
