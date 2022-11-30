@@ -9,8 +9,11 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    let screen = LoginView()
+
     init() {
         super.init(nibName: nil, bundle: nil)
+        self.view = screen
     }
 
     required init?(coder: NSCoder) {

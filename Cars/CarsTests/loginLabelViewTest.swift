@@ -17,7 +17,7 @@ class LabeledTextFieldViewSpec: QuickSpec {
         describe("the 'UI'      ") {
             it("should have the expected look and feel") {
                 let frame = CGRect(x: 0, y: 0, width: 250, height: 80)
-                let view = LabeledTextFieldView(title: "Nome", placeholder: "Seu nome aqui")
+                let view = LabeledTextField(title: "Nome", placeholder: "Seu nome aqui")
                 view.frame = frame
 //                expect(view) == snapshot("ViewControllerScreen")
                 expect(view) == snapshot("LabeledTextFieldViewSpec")

@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class underlinedButton: UIButton {
+final class UnderlinedButton: UIButton {
 
     enum Style {
         case primary

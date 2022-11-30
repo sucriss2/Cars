@@ -21,7 +21,7 @@ class AppCoordinator: Coordinator {
     }
 
     private func showCoordinator() {
-        let navigationController = UINavigationController()
+        navigationController = UINavigationController()
         windows?.rootViewController = navigationController
         windows?.makeKeyAndVisible()
 

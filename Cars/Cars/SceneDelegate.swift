@@ -18,8 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
 
         let window = UIWindow(windowScene: windowScene)
-        let coordinator = AppCoordinator(windows: window)
-        coordinator.start()
+        coordinator = AppCoordinator(windows: window)
+        coordinator?.start()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
