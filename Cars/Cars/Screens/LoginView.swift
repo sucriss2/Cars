@@ -173,8 +173,8 @@ extension LoginView: CodeView {
         labeledStackView.addArrangedSubview(loginTextFieldView)
         labeledStackView.addArrangedSubview(passwordTextFieldView)
 
-        buttonStackView.addArrangedSubview(logIntoLabel)
         buttonStackView.addArrangedSubview(logSwitch)
+        buttonStackView.addArrangedSubview(logIntoLabel)
         buttonStackView.addArrangedSubview(UIView())
         buttonStackView.addArrangedSubview(lostPasswordButton)
 
