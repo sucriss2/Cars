@@ -29,9 +29,9 @@ class AppCoordinator: Coordinator {
 //        loginCoordinator.start()
 //        childCoordinator = loginCoordinator
 
-        let listCoordinator = ListCoordinator(navigationController: navigationController)
-        listCoordinator.start()
-        childCoordinator = listCoordinator
+        let detailCoordinator = DetailCarCoordinator(navigationController: navigationController)
+        detailCoordinator.start()
+        childCoordinator = detailCoordinator
     }
 
 }
