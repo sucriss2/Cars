@@ -9,7 +9,7 @@ import UIKit
 
 final class LabeledTextField: UIView {
 
-    lazy var textLabel: UILabel = {
+    let textLabel: UILabel = {
         let view = UILabel(frame: .zero)
         view.text = ""
         view.textColor = .black
@@ -17,21 +17,21 @@ final class LabeledTextField: UIView {
         return view
     }()
 
-    lazy var textField: UITextField = {
+    let textField: UITextField = {
         let view = UITextField(frame: .zero)
         view.placeholder = ""
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
-    lazy var separetorView: UIView = {
+    let separetorView: UIView = {
         let view = UIView(frame: .zero)
         view.backgroundColor = .systemGray
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
-    lazy var viewStack: UIStackView = {
+    let viewStack: UIStackView = {
         let view = UIStackView(frame: .zero)
         view.backgroundColor = .white
         view.distribution = .fillEqually

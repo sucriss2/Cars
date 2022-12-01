@@ -33,9 +33,10 @@
 		8C9CE1A92937A5E40055F265 /* ListCarsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CE1A82937A5E40055F265 /* ListCarsTableViewCell.swift */; };
 		8C9CE1AD2937D8170055F265 /* ListCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CE1AC2937D8170055F265 /* ListCellSpec.swift */; };
 		8CAB9A4929381347009AC772 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 8C45FE2529380D0500273DAD /* SnapKit-Dynamic */; };
-		8CFC35792938FBC100B1230A /* DetailCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC35782938FBC100B1230A /* DetailCar.swift */; };
+		8CFC35792938FBC100B1230A /* DetailCarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC35782938FBC100B1230A /* DetailCarView.swift */; };
 		8CFC357C2938FCCE00B1230A /* DetailCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC357B2938FCCE00B1230A /* DetailCarViewController.swift */; };
 		8CFC357E2938FCDF00B1230A /* DetailCarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC357D2938FCDF00B1230A /* DetailCarCoordinator.swift */; };
+		8CFC35802939204B00B1230A /* InfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC357F2939204B00B1230A /* InfoLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,9 +96,10 @@
 		8C9CE1A62937A17A0055F265 /* ListCarsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCarsCoordinator.swift; sourceTree = "<group>"; };
 		8C9CE1A82937A5E40055F265 /* ListCarsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCarsTableViewCell.swift; sourceTree = "<group>"; };
 		8C9CE1AC2937D8170055F265 /* ListCellSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellSpec.swift; sourceTree = "<group>"; };
-		8CFC35782938FBC100B1230A /* DetailCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCar.swift; sourceTree = "<group>"; };
+		8CFC35782938FBC100B1230A /* DetailCarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCarView.swift; sourceTree = "<group>"; };
 		8CFC357B2938FCCE00B1230A /* DetailCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCarViewController.swift; sourceTree = "<group>"; };
 		8CFC357D2938FCDF00B1230A /* DetailCarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCarCoordinator.swift; sourceTree = "<group>"; };
+		8CFC357F2939204B00B1230A /* InfoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 		8C50026029350F05003A5774 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8CFC3581293920B200B1230A /* Labels */,
 				8C500295293569D4003A5774 /* TextFields */,
 				8C9CE19A29356EDD0055F265 /* Buttons */,
 			);
@@ -247,11 +250,19 @@
 		8CFC357A2938FBC700B1230A /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				8CFC35782938FBC100B1230A /* DetailCar.swift */,
 				8CFC357D2938FCDF00B1230A /* DetailCarCoordinator.swift */,
 				8CFC357B2938FCCE00B1230A /* DetailCarViewController.swift */,
+				8CFC35782938FBC100B1230A /* DetailCarView.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		8CFC3581293920B200B1230A /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				8CFC357F2939204B00B1230A /* InfoLabel.swift */,
+			);
+			path = Labels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,7 +392,8 @@
 				8C50027629354A46003A5774 /* LoginView.swift in Sources */,
 				8C9CE1A52937A1540055F265 /* ListCarsViewController.swift in Sources */,
 				8C5002302934FB49003A5774 /* AppCoordinator.swift in Sources */,
-				8CFC35792938FBC100B1230A /* DetailCar.swift in Sources */,
+				8CFC35802939204B00B1230A /* InfoLabel.swift in Sources */,
+				8CFC35792938FBC100B1230A /* DetailCarView.swift in Sources */,
 				8C5001FE2934F9ED003A5774 /* AppDelegate.swift in Sources */,
 				8C9CE1A72937A17A0055F265 /* ListCarsCoordinator.swift in Sources */,
 				8C5002002934F9ED003A5774 /* SceneDelegate.swift in Sources */,
