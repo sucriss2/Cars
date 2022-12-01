@@ -31,7 +31,6 @@
 		8C9CE1A52937A1540055F265 /* ListCarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CE1A42937A1540055F265 /* ListCarsViewController.swift */; };
 		8C9CE1A72937A17A0055F265 /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CE1A62937A17A0055F265 /* ListCoordinator.swift */; };
 		8C9CE1A92937A5E40055F265 /* ListCarsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CE1A82937A5E40055F265 /* ListCarsTableViewCell.swift */; };
-		8C9CE1AB2937D1660055F265 /* ListCarstCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CE1AA2937D1660055F265 /* ListCarstCellView.swift */; };
 		8C9CE1AD2937D8170055F265 /* ListCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CE1AC2937D8170055F265 /* ListCellSpec.swift */; };
 		8CAB9A4929381347009AC772 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 8C45FE2529380D0500273DAD /* SnapKit-Dynamic */; };
 /* End PBXBuildFile section */
@@ -71,14 +70,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8C5001FA2934F9ED003A5774 /* Cars */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Cars; path = ../../../../../../../projetos_gits/Cars/Cars/Cars; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C5001FA2934F9ED003A5774 /* Cars */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Cars; path = Cars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C5001FD2934F9ED003A5774 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C5001FF2934F9ED003A5774 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8C5002012934F9ED003A5774 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../Login/LoginViewController.swift; sourceTree = "<group>"; };
 		8C5002062934F9EF003A5774 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C5002092934F9EF003A5774 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C50020B2934F9EF003A5774 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8C5002102934F9EF003A5774 /* CarsTests */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = CarsTests; path = ../../../../../../../projetos_gits/Cars/Cars/CarsTests; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C5002102934F9EF003A5774 /* CarsTests */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = CarsTests; path = CarsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C5002142934F9EF003A5774 /* CarsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsTests.swift; sourceTree = "<group>"; };
 		8C50022D2934FAD0003A5774 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8C50022F2934FB49003A5774 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -92,7 +91,6 @@
 		8C9CE1A42937A1540055F265 /* ListCarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCarsViewController.swift; sourceTree = "<group>"; };
 		8C9CE1A62937A17A0055F265 /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
 		8C9CE1A82937A5E40055F265 /* ListCarsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCarsTableViewCell.swift; sourceTree = "<group>"; };
-		8C9CE1AA2937D1660055F265 /* ListCarstCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCarstCellView.swift; sourceTree = "<group>"; };
 		8C9CE1AC2937D8170055F265 /* ListCellSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -232,10 +230,9 @@
 		8C9CE19F2937A0880055F265 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				8C9CE1A42937A1540055F265 /* ListCarsViewController.swift */,
 				8C9CE1A62937A17A0055F265 /* ListCoordinator.swift */,
+				8C9CE1A42937A1540055F265 /* ListCarsViewController.swift */,
 				8C9CE1A82937A5E40055F265 /* ListCarsTableViewCell.swift */,
-				8C9CE1AA2937D1660055F265 /* ListCarstCellView.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -361,7 +358,6 @@
 				8C9CE1A32937A1340055F265 /* UnderlinedButton.swift in Sources */,
 				8C500232293502D3003A5774 /* LoginCoordinator.swift in Sources */,
 				8C50022E2934FAD0003A5774 /* Coordinator.swift in Sources */,
-				8C9CE1AB2937D1660055F265 /* ListCarstCellView.swift in Sources */,
 				8C5002022934F9ED003A5774 /* LoginViewController.swift in Sources */,
 				8C50027629354A46003A5774 /* LoginView.swift in Sources */,
 				8C9CE1A52937A1540055F265 /* ListCarsViewController.swift in Sources */,

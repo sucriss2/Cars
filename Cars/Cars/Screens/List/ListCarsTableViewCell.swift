@@ -11,18 +11,13 @@ class ListCarsTableViewCell: UITableViewCell {
 
     static let identifier = "ListCarsTableViewCell"
 
-//    let listCellView: ListCarstCellView = {
-//        let view = ListCarstCellView()
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        return view
-//    }()
-
     lazy var nameLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Nome do Carro"
+        label.text = ""
         label.textColor = .black
-        label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.numberOfLines = 2
+        label.font = .systemFont(ofSize: 18, weight: .semibold)
         label.backgroundColor = .white
         return label
     }()
@@ -30,41 +25,61 @@ class ListCarsTableViewCell: UITableViewCell {
     let photoImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
         imageView.image = UIImage(named: "placeholder")
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
 
+    let cellStackView: UIStackView = {
+        let view = UIStackView(frame: .zero)
+        view.distribution = .fill
+        view.axis = .horizontal
+        view.spacing = 16
+        view.backgroundColor = .white
+        view.isLayoutMarginsRelativeArrangement = true
+        view.layoutMargins = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.backgroundColor = .cyan
-        contentView.addSubview(photoImageView)
-        contentView.addSubview(nameLabel)
+        cellStackView.addArrangedSubview(photoImageView)
+        cellStackView.addArrangedSubview(nameLabel)
+        contentView.addSubview(cellStackView)
         backgroundColor = .lightGray
         configConstraints()
     }
 
-    private func configConstraints() {
-        
-        NSLayoutConstraint.activate([
-            nameLabel.topAnchor.constraint(equalTo: self.topAnchor),
-            nameLabel.leadingAnchor.constraint(equalTo: photoImageView.trailingAnchor),
-            nameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            nameLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor)
-        ])
-
-        NSLayoutConstraint.activate([
-            photoImageView.widthAnchor.constraint(equalTo: self.heightAnchor),
-            photoImageView.topAnchor.constraint(equalTo: self.topAnchor),
-            photoImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            //photoImageView.trailingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
-            photoImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
-        ])
-    }
-
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    public func configure(name: String, photo: String) {
+        nameLabel.text = name
+        photoImageView.image = UIImage(named: photo)
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        nameLabel.text = nil
+        photoImageView.image = nil
+    }
+
+    private func configConstraints() {
+
+        photoImageView.widthAnchor.constraint(equalTo: self.heightAnchor).isActive = true
+
+        NSLayoutConstraint.activate([
+            cellStackView.topAnchor.constraint(equalTo: self.topAnchor),
+            cellStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            cellStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            cellStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        ])
+
     }
 
 }

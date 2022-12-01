@@ -12,8 +12,6 @@ class ListCarsViewController: UIViewController {
     lazy var tableview: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-//        tableView.isScrollEnabled = false
-//        tableView.separatorColor = .white
         tableView.scrollsToTop = true
         tableView.delegate = self
         tableView.dataSource = self
@@ -47,15 +45,18 @@ class ListCarsViewController: UIViewController {
 extension ListCarsViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 15
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(
-            withIdentifier: ListCarsTableViewCell.identifier, for: indexPath)
-//        ) as? ListCarsTableViewCell else {
-//            fatalError()
-//        }
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: ListCarsTableViewCell.identifier, for: indexPath
+        ) as? ListCarsTableViewCell else {
+            fatalError()
+        }
+        cell.configure(
+            name: "Custom + \(indexPath.row+1)",
+            photo: indexPath.row % 2 == 0 ? "placeholder" : "car")
         return cell
     }
 
