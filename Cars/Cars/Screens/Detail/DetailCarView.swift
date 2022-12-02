@@ -28,16 +28,7 @@ public final class DetailCarView: UIView {
 
     let photoImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
-        imageView.image = UIImage(named: "placeholder")
-        imageView.contentMode = .scaleToFill
-        imageView.clipsToBounds = true
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-
-    let photoImageView2: UIImageView = {
-        let imageView = UIImageView(frame: .zero)
-        imageView.image = UIImage(named: "placeholder")
+        imageView.image = UIImage(named: "car")
         imageView.contentMode = .scaleToFill
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -48,7 +39,7 @@ public final class DetailCarView: UIView {
         let view = UIStackView(frame: .zero)
         view.axis = .vertical
         view.distribution = .equalSpacing
-        view.spacing = 16
+        view.spacing = 8
         view.alignment = .center
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -61,7 +52,7 @@ public final class DetailCarView: UIView {
         view.distribution = .fill
         view.contentMode = .scaleToFill
         view.isLayoutMarginsRelativeArrangement = true
-        view.layoutMargins = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
+        view.layoutMargins = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -94,7 +85,7 @@ public final class DetailCarView: UIView {
 
     let nameInfoText = InfoLabel(text: "nome", subText: "Ferrari")
     let typeInfoText = InfoLabel(text: "tipo", subText: "Ferrari")
-    let descriptionInfoText = InfoLabel(text: "descrição", subText: "Hghkfutsrtseaathh  a jsgfoqbsuoc  ")
+    let descriptionInfoText = InfoLabel(text: "descrição", subText: "Hghkfutsrtseaathh  a jsgfoq")
     let mapView = MapView()
 
     init() {
@@ -132,19 +123,19 @@ extension DetailCarView: CodeView {
         ])
 
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: detailView.safeAreaLayoutGuide.topAnchor, constant: 20),
+            titleLabel.topAnchor.constraint(equalTo: detailView.safeAreaLayoutGuide.topAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: detailView.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             titleLabel.trailingAnchor.constraint(equalTo: detailView.safeAreaLayoutGuide.trailingAnchor, constant: -20)
         ])
 
         NSLayoutConstraint.activate([
             photoImageView.widthAnchor.constraint(equalTo: principalStackView.widthAnchor),
-            photoImageView.heightAnchor.constraint(equalToConstant: 100)
+            photoImageView.heightAnchor.constraint(equalToConstant: 150)
         ])
 
         NSLayoutConstraint.activate([
             mapView.widthAnchor.constraint(equalTo: principalStackView.widthAnchor),
-            mapView.heightAnchor.constraint(equalToConstant: 150)
+            mapView.heightAnchor.constraint(equalToConstant: 120)
         ])
 
         NSLayoutConstraint.activate([
@@ -156,9 +147,9 @@ extension DetailCarView: CodeView {
 
         NSLayoutConstraint.activate([
             principalStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30),
-            principalStackView.leadingAnchor.constraint(equalTo: detailView.leadingAnchor),
-            principalStackView.trailingAnchor.constraint(equalTo: detailView.trailingAnchor),
-            principalStackView.bottomAnchor.constraint(equalTo: detailView.bottomAnchor, constant: -70)
+            principalStackView.leadingAnchor.constraint(equalTo: detailView.leadingAnchor, constant: 8),
+            principalStackView.trailingAnchor.constraint(equalTo: detailView.trailingAnchor, constant: -8),
+            principalStackView.bottomAnchor.constraint(equalTo: detailView.bottomAnchor, constant: -130)
         ])
 
     }
@@ -166,6 +157,5 @@ extension DetailCarView: CodeView {
     func setupAdditionConfiguration() {
 
     }
-
 
 }

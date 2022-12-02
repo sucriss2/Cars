@@ -15,6 +15,11 @@ final class MapView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.isHidden = false
         view.backgroundColor = .red
+        view.contentMode = .scaleToFill
+//        view.isZoomEnabled = true
+//        view.showsCompass = true
+//        view.isScrollEnabled = true
+//        view.isRotateEnabled = true
         return view
     }()
 
@@ -36,14 +41,12 @@ final class MapView: UIView {
 
 }
 
-
 extension MapView: CodeView {
     func buidViewHierarchy() {
         addSubview(mapaMapView)
     }
 
     func setupConstraints() {
-
         NSLayoutConstraint.activate([
             mapaMapView.topAnchor.constraint(equalTo: self.topAnchor),
             mapaMapView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
