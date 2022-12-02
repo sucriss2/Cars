@@ -1,10 +1,9 @@
 //
 //  Car.swift
-//  AppCarros
+//  Cars
 //
-//  Created by Suh on 07/11/22.
+//  Created by Suh on 02/12/22.
 //
-// swiftlint:disable line_length
 
 import Foundation
 
@@ -44,3 +43,4 @@ extension Car {
     }
 }
 #endif
+
