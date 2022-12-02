@@ -37,6 +37,8 @@
 		8CFC357C2938FCCE00B1230A /* DetailCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC357B2938FCCE00B1230A /* DetailCarViewController.swift */; };
 		8CFC357E2938FCDF00B1230A /* DetailCarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC357D2938FCDF00B1230A /* DetailCarCoordinator.swift */; };
 		8CFC35802939204B00B1230A /* InfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC357F2939204B00B1230A /* InfoLabel.swift */; };
+		8CFC3583293A3AAB00B1230A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC3582293A3AAB00B1230A /* MapView.swift */; };
+		8CFC3586293A4A3500B1230A /* BoldButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC3585293A4A3500B1230A /* BoldButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,8 @@
 		8CFC357B2938FCCE00B1230A /* DetailCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCarViewController.swift; sourceTree = "<group>"; };
 		8CFC357D2938FCDF00B1230A /* DetailCarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCarCoordinator.swift; sourceTree = "<group>"; };
 		8CFC357F2939204B00B1230A /* InfoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoLabel.swift; sourceTree = "<group>"; };
+		8CFC3582293A3AAB00B1230A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		8CFC3585293A4A3500B1230A /* BoldButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoldButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +215,7 @@
 		8C50026029350F05003A5774 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8CFC3584293A3AAF00B1230A /* Map */,
 				8CFC3581293920B200B1230A /* Labels */,
 				8C500295293569D4003A5774 /* TextFields */,
 				8C9CE19A29356EDD0055F265 /* Buttons */,
@@ -232,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				8C9CE1A22937A1340055F265 /* UnderlinedButton.swift */,
+				8CFC3585293A4A3500B1230A /* BoldButton.swift */,
 			);
 			name = Buttons;
 			path = ../Buttons;
@@ -263,6 +269,14 @@
 				8CFC357F2939204B00B1230A /* InfoLabel.swift */,
 			);
 			path = Labels;
+			sourceTree = "<group>";
+		};
+		8CFC3584293A3AAF00B1230A /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				8CFC3582293A3AAB00B1230A /* MapView.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,8 +402,10 @@
 				8CFC357E2938FCDF00B1230A /* DetailCarCoordinator.swift in Sources */,
 				8C500232293502D3003A5774 /* LoginCoordinator.swift in Sources */,
 				8C50022E2934FAD0003A5774 /* Coordinator.swift in Sources */,
+				8CFC3586293A4A3500B1230A /* BoldButton.swift in Sources */,
 				8C5002022934F9ED003A5774 /* LoginViewController.swift in Sources */,
 				8C50027629354A46003A5774 /* LoginView.swift in Sources */,
+				8CFC3583293A3AAB00B1230A /* MapView.swift in Sources */,
 				8C9CE1A52937A1540055F265 /* ListCarsViewController.swift in Sources */,
 				8C5002302934FB49003A5774 /* AppCoordinator.swift in Sources */,
 				8CFC35802939204B00B1230A /* InfoLabel.swift in Sources */,

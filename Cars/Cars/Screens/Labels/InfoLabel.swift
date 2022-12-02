@@ -13,8 +13,9 @@ final class InfoLabel: UIView {
         let label = UILabel(frame: .zero)
         label.text = ""
         label.textColor = .black
+        label.numberOfLines = 0
         label.textAlignment = .right
-        label.font = .systemFont(ofSize: 12, weight: .semibold)
+        label.font = .systemFont(ofSize: 17, weight: .semibold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -23,8 +24,9 @@ final class InfoLabel: UIView {
         let label = UILabel(frame: .zero)
         label.text = ""
         label.textColor = .black
-        label.numberOfLines = 5
-        label.font = .systemFont(ofSize: 10, weight: .medium)
+        label.numberOfLines = 1
+        label.lineBreakMode = .byTruncatingTail
+        label.font = .systemFont(ofSize: 17, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -32,9 +34,8 @@ final class InfoLabel: UIView {
     let labelStackView: UIStackView = {
         let view = UIStackView(frame: .zero)
         view.axis = .horizontal
-        view.backgroundColor = .blue
-        view.spacing = 16
-        view.distribution = .fillEqually
+//        view.backgroundColor = .blue
+        view.spacing = 4
         view.alignment = .fill
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -64,6 +65,10 @@ extension InfoLabel: CodeView {
     }
 
     func setupConstraints() {
+
+        NSLayoutConstraint.activate([
+            textLabel.widthAnchor.constraint(equalToConstant: 80)
+        ])
 
         NSLayoutConstraint.activate([
             labelStackView.topAnchor.constraint(equalTo: self.topAnchor),

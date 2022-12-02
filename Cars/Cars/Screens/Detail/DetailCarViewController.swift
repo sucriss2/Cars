@@ -9,7 +9,7 @@ import UIKit
 
 class DetailCarViewController: UIViewController {
 
-    let screen = DetailCarView()
+    private let screen = DetailCarView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +17,5 @@ class DetailCarViewController: UIViewController {
         self.view = screen
 
     }
-
 
 }

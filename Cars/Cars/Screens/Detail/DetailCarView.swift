@@ -20,8 +20,8 @@ public final class DetailCarView: UIView {
         let label = UILabel(frame: .zero)
         label.text = "Detalhes"
         label.textColor = .black
-        label.backgroundColor = .red
-        label.font = .systemFont(ofSize: 20, weight: .semibold)
+        label.textAlignment = .center
+        label.font = UIFont.boldSystemFont(ofSize: 20)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -48,11 +48,8 @@ public final class DetailCarView: UIView {
         let view = UIStackView(frame: .zero)
         view.axis = .vertical
         view.distribution = .equalSpacing
-        view.backgroundColor = .brown
         view.spacing = 16
         view.alignment = .center
-        view.isLayoutMarginsRelativeArrangement = true
-        view.layoutMargins = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -60,18 +57,45 @@ public final class DetailCarView: UIView {
     let infolabelStackView: UIStackView = {
         let view = UIStackView(frame: .zero)
         view.axis = .vertical
-        view.backgroundColor = .yellow
         view.spacing = 8
         view.distribution = .fill
+        view.contentMode = .scaleToFill
         view.isLayoutMarginsRelativeArrangement = true
-        view.layoutMargins = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        view.layoutMargins = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
-    let nameInfoText = InfoLabel(text: "Nome", subText: "Ferrari")
-    let typeInfoText = InfoLabel(text: "Nome2", subText: "Ferrari")
-    let descriptionInfoText = InfoLabel(text: "Nome3", subText: "hghkfutsrtseaathh  a jsgfoqbsuoc zjbciuabvousfgajosbdf auiebufogaoihfhsihgpis fniheroihioheifaehiofhoieh nn ihnf ih woieh oiheoig hioe oi o hohohohowoihoi  uwehoiwtoihoigwg ")
+    let showVideoButton: UIButton = {
+        let view = UIButton(frame: .zero)
+        view.backgroundColor = .black
+        view.layer.cornerRadius = 8.0
+        view.setAttributedTitle(
+            NSAttributedString(
+                string: "Assistir Vídeo",
+                attributes: [
+                    NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18.0),
+                    NSAttributedString.Key.foregroundColor: UIColor.red
+                ]
+            ),
+            for: .normal)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
+    let buttonStackView: UIStackView = {
+        let view = UIStackView(frame: .zero)
+        view.axis = .horizontal
+        view.distribution = .fill
+        view.alignment = .center
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
+    let nameInfoText = InfoLabel(text: "nome", subText: "Ferrari")
+    let typeInfoText = InfoLabel(text: "tipo", subText: "Ferrari")
+    let descriptionInfoText = InfoLabel(text: "descrição", subText: "Hghkfutsrtseaathh  a jsgfoqbsuoc  ")
+    let mapView = MapView()
 
     init() {
         super.init(frame: .zero)
@@ -87,23 +111,31 @@ public final class DetailCarView: UIView {
 extension DetailCarView: CodeView {
     func buidViewHierarchy() {
         addSubview(detailView)
-
-        principalStackView.addArrangedSubview(titleLabel)
+        detailView.addSubview(titleLabel)
         principalStackView.addArrangedSubview(photoImageView)
         infolabelStackView.addArrangedSubview(nameInfoText)
         infolabelStackView.addArrangedSubview(typeInfoText)
         infolabelStackView.addArrangedSubview(descriptionInfoText)
-
         principalStackView.addArrangedSubview(infolabelStackView)
-        principalStackView.addArrangedSubview(photoImageView2)
-
-
+        principalStackView.addArrangedSubview(mapView)
+        buttonStackView.addArrangedSubview(showVideoButton)
+        principalStackView.addArrangedSubview(buttonStackView)
         detailView.addSubview(principalStackView)
-
 
     }
 
     func setupConstraints() {
+
+        NSLayoutConstraint.activate([
+            showVideoButton.heightAnchor.constraint(equalToConstant: 44),
+            buttonStackView.widthAnchor.constraint(equalToConstant: 150)
+        ])
+
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: detailView.safeAreaLayoutGuide.topAnchor, constant: 20),
+            titleLabel.leadingAnchor.constraint(equalTo: detailView.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            titleLabel.trailingAnchor.constraint(equalTo: detailView.safeAreaLayoutGuide.trailingAnchor, constant: -20)
+        ])
 
         NSLayoutConstraint.activate([
             photoImageView.widthAnchor.constraint(equalTo: principalStackView.widthAnchor),
@@ -111,8 +143,8 @@ extension DetailCarView: CodeView {
         ])
 
         NSLayoutConstraint.activate([
-            photoImageView2.widthAnchor.constraint(equalTo: principalStackView.widthAnchor),
-            photoImageView2.heightAnchor.constraint(equalToConstant: 100)
+            mapView.widthAnchor.constraint(equalTo: principalStackView.widthAnchor),
+            mapView.heightAnchor.constraint(equalToConstant: 150)
         ])
 
         NSLayoutConstraint.activate([
@@ -123,9 +155,10 @@ extension DetailCarView: CodeView {
         ])
 
         NSLayoutConstraint.activate([
-            principalStackView.leadingAnchor.constraint(equalTo: detailView.leadingAnchor, constant: 16),
-            principalStackView.trailingAnchor.constraint(equalTo: detailView.trailingAnchor, constant: -16),
-            principalStackView.centerYAnchor.constraint(equalTo: detailView.centerYAnchor, constant: -70)
+            principalStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30),
+            principalStackView.leadingAnchor.constraint(equalTo: detailView.leadingAnchor),
+            principalStackView.trailingAnchor.constraint(equalTo: detailView.trailingAnchor),
+            principalStackView.bottomAnchor.constraint(equalTo: detailView.bottomAnchor, constant: -70)
         ])
 
     }
