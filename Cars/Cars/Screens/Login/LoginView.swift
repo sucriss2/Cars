@@ -235,7 +235,13 @@ extension LoginView: CodeView {
         lostPasswordButton.setTitle("Esqueci a senha", for: .normal)
         createAccountButton.setTitle("Criar uma conta", for: .normal)
         helpButton.setTitle("Ajuda    ", for: .normal)
+
+        loginButton.addTarget(self, action: #selector(abc), for: .touchUpInside)
     }
 
+    @objc private func abc() {
+        print("===>> logando... <<===")
+        loginButton.backgroundColor = .systemTeal
+    }
 
 }

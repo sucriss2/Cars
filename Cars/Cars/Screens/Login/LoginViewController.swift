@@ -10,6 +10,7 @@ import UIKit
 class LoginViewController: UIViewController {
 
     let screen = LoginView()
+    var model: LoginModel?
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -25,6 +26,13 @@ class LoginViewController: UIViewController {
         view.backgroundColor = .green
     }
 
+    func show() {
+        screen.loginTextFieldView.textField.addTarget(self, action: #selector(showLogin), for: .touchUpInside)
+    }
+
+    @objc private func showLogin() {
+        print("===>> MODEL OKOKOK")
+    }
 
 }
 

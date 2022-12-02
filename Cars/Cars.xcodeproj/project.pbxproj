@@ -30,6 +30,7 @@
 		8C52827F293A9139004F7CEF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C52827E293A9139004F7CEF /* User.swift */; };
 		8C528281293A9140004F7CEF /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C528280293A9140004F7CEF /* UserSession.swift */; };
 		8C528283293A917C004F7CEF /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C528282293A917B004F7CEF /* Login.swift */; };
+		8C528289293A9422004F7CEF /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C528288293A9422004F7CEF /* LoginModel.swift */; };
 		8C9CE1A12937A1200055F265 /* LabeledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CE1A02937A1200055F265 /* LabeledTextField.swift */; };
 		8C9CE1A32937A1340055F265 /* UnderlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CE1A22937A1340055F265 /* UnderlinedButton.swift */; };
 		8C9CE1A52937A1540055F265 /* ListCarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CE1A42937A1540055F265 /* ListCarsViewController.swift */; };
@@ -102,6 +103,7 @@
 		8C528285293A91A5004F7CEF /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		8C528286293A91A5004F7CEF /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		8C528287293A91A5004F7CEF /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		8C528288293A9422004F7CEF /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginModel.swift; path = ../../../../../../Desktop/LoginModel.swift; sourceTree = "<group>"; };
 		8C9CE1A02937A1200055F265 /* LabeledTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LabeledTextField.swift; path = Cars/TextFields/LabeledTextField.swift; sourceTree = SOURCE_ROOT; };
 		8C9CE1A22937A1340055F265 /* UnderlinedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnderlinedButton.swift; path = Cars/Buttons/UnderlinedButton.swift; sourceTree = SOURCE_ROOT; };
 		8C9CE1A42937A1540055F265 /* ListCarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCarsViewController.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 			children = (
 				8C500231293502D3003A5774 /* LoginCoordinator.swift */,
 				8C5002012934F9ED003A5774 /* LoginViewController.swift */,
+				8C528288293A9422004F7CEF /* LoginModel.swift */,
 				8C50027529354A46003A5774 /* LoginView.swift */,
 			);
 			path = Login;
@@ -442,6 +445,7 @@
 				8C52827F293A9139004F7CEF /* User.swift in Sources */,
 				8C9CE1A52937A1540055F265 /* ListCarsViewController.swift in Sources */,
 				8C5002302934FB49003A5774 /* AppCoordinator.swift in Sources */,
+				8C528289293A9422004F7CEF /* LoginModel.swift in Sources */,
 				8CFC35802939204B00B1230A /* InfoLabel.swift in Sources */,
 				8CFC35792938FBC100B1230A /* DetailCarView.swift in Sources */,
 				8C5001FE2934F9ED003A5774 /* AppDelegate.swift in Sources */,
