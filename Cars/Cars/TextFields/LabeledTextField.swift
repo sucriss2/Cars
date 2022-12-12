@@ -9,7 +9,7 @@ import UIKit
 
 final class LabeledTextField: UIView {
 
-    let textLabel: UILabel = {
+    private let textLabel: UILabel = {
         let view = UILabel(frame: .zero)
         view.text = ""
         view.textColor = .black
@@ -17,21 +17,22 @@ final class LabeledTextField: UIView {
         return view
     }()
 
-    let textField: UITextField = {
+    private let textField: UITextField = {
         let view = UITextField(frame: .zero)
+        view.text = ""
         view.placeholder = ""
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
-    let separetorView: UIView = {
+    private let separetorView: UIView = {
         let view = UIView(frame: .zero)
         view.backgroundColor = .systemGray
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
-    let viewStack: UIStackView = {
+    private let viewStack: UIStackView = {
         let view = UIStackView(frame: .zero)
         view.backgroundColor = .white
         view.distribution = .fillEqually
@@ -44,6 +45,16 @@ final class LabeledTextField: UIView {
 
     let title: String
     let placeholder: String
+
+    var text: String? {
+        get {
+            return textField.text
+        }
+
+        set {
+            textField.text = newValue
+        }
+    }
 
     init(title: String, placeholder: String) {
         self.title = title

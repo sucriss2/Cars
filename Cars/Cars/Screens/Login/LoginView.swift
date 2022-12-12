@@ -7,16 +7,20 @@
 
 import UIKit
 
-public final class LoginView: UIView {
+protocol LoginViewDelegate: AnyObject {
+    func didTapLogin()
+}
 
-    let mainView: UIView = {
+public final class LoginView: UIView, UITextFieldDelegate {
+
+    private let mainView: UIView = {
         let view = UIView(frame: .zero)
         view.backgroundColor = .clear
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
-    let mainBackgroundImage: UIImageView = {
+    private let mainBackgroundImage: UIImageView = {
         let image = UIImageView(frame: .zero)
         image.image = UIImage(named: "login")
         image.contentMode = .scaleAspectFill
@@ -26,7 +30,7 @@ public final class LoginView: UIView {
     }()
 
 
-    let titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let view = UILabel(frame: .zero)
         view.text = "Carros"
         view.backgroundColor = .gray
@@ -37,7 +41,7 @@ public final class LoginView: UIView {
         return view
     }()
 
-    let labeledStackView: UIStackView = {
+    private let labeledStackView: UIStackView = {
         let view = UIStackView(frame: .zero)
         view.distribution = .fill
         view.axis = .vertical
@@ -47,7 +51,7 @@ public final class LoginView: UIView {
         return view
     }()
 
-    let buttonStackView: UIStackView = {
+    private let buttonStackView: UIStackView = {
         let view = UIStackView(frame: .zero)
         view.axis = .horizontal
         view.distribution = .equalCentering
@@ -59,7 +63,7 @@ public final class LoginView: UIView {
         return view
     }()
 
-    let logIntoLabel: UILabel = {
+    private let logIntoLabel: UILabel = {
         let view = UILabel(frame: .zero)
         view.text = "Manter Logado"
         view.textColor = .black
@@ -68,7 +72,7 @@ public final class LoginView: UIView {
         return view
     }()
 
-    let logSwitch: UISwitch = {
+    private let logSwitch: UISwitch = {
         let view = UISwitch(frame: .zero)
         view.onTintColor = .green
         view.isOn = false
@@ -76,7 +80,7 @@ public final class LoginView: UIView {
         return view
     }()
 
-    let creatAccountStackView: UIStackView = {
+    private let creatAccountStackView: UIStackView = {
         let view = UIStackView(frame: .zero)
         view.axis = .horizontal
         view.distribution = .fill
@@ -87,7 +91,7 @@ public final class LoginView: UIView {
         return view
     }()
 
-    let createAccountLabel: UILabel = {
+    private let createAccountLabel: UILabel = {
         let view = UILabel(frame: .zero)
         view.text = "Ainda não tem cadastro?"
         view.textColor = .gray
@@ -96,7 +100,7 @@ public final class LoginView: UIView {
         return view
     }()
 
-    let loginButton: UIButton = {
+    private let loginButton: UIButton = {
         let view = UIButton(frame: .zero)
         view.backgroundColor = .black
         view.layer.cornerRadius = 8.0
@@ -113,7 +117,7 @@ public final class LoginView: UIView {
         return view
     }()
 
-    let loginButtonStackView: UIStackView = {
+    private let loginButtonStackView: UIStackView = {
         let view = UIStackView(frame: .zero)
         view.axis = .horizontal
         view.distribution = .fill
@@ -124,7 +128,7 @@ public final class LoginView: UIView {
         return view
     }()
 
-    let helpStackView: UIStackView = {
+    private let helpStackView: UIStackView = {
         let view = UIStackView(frame: .zero)
         view.axis = .horizontal
         view.distribution = .fill
@@ -136,22 +140,42 @@ public final class LoginView: UIView {
         return view
     }()
 
-    let helpIconImage: UIImageView = {
+    private let helpIconImage: UIImageView = {
         let view = UIImageView(frame: .zero)
         view.image = UIImage(systemName: "questionmark.circle.fill")
         view.tintColor = .systemBlue
+        view.clipsToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
 
-    let loginTextFieldView = LabeledTextField(title: "Login", placeholder: "Digite seu login")
-    let passwordTextFieldView = LabeledTextField(title: "Senha", placeholder: "Digite sua senha")
-    let lostPasswordButton = UnderlinedButton(style: .primary)
-    let createAccountButton = UnderlinedButton(style: .primary)
-    let helpButton = UnderlinedButton(style: .primary)
+    private let loginTextFieldView = LabeledTextField(title: "Login", placeholder: "Digite seu login")
+    private let passwordTextFieldView = LabeledTextField(title: "Senha", placeholder: "Digite sua senha")
+    private let lostPasswordButton = UnderlinedButton(style: .primary)
+    private let createAccountButton = UnderlinedButton(style: .primary)
+    private let helpButton = UnderlinedButton(style: .primary)
 
+    // MARK: - Public Properties
+    weak var delegate: LoginViewDelegate?
 
+    var userName: String {
+        return loginTextFieldView.text ?? ""
+    }
+
+    var password: String {
+        return passwordTextFieldView.text ?? ""
+    }
+
+    var startLoginButton: UIButton {
+        return loginButton
+    }
+
+    var keepLogged: Bool {
+        return logSwitch.isOn
+    }
+
+    // ----
     public init() {
         super.init(frame: .zero)
         setupView()
@@ -198,32 +222,23 @@ extension LoginView: CodeView {
     func setupConstraints() {
 
         NSLayoutConstraint.activate([
-            titleLabel.heightAnchor.constraint(equalToConstant: 60)
-        ])
 
-        NSLayoutConstraint.activate([
-            helpButton.widthAnchor.constraint(equalToConstant: 100)
-        ])
+            titleLabel.heightAnchor.constraint(equalToConstant: 60),
 
-        NSLayoutConstraint.activate([
-            loginButton.heightAnchor.constraint(equalToConstant: 44)
-        ])
+            helpButton.widthAnchor.constraint(equalToConstant: 100),
 
-        NSLayoutConstraint.activate([
+            loginButton.heightAnchor.constraint(equalToConstant: 44),
+
             mainView.topAnchor.constraint(equalTo: self.topAnchor),
             mainView.leftAnchor.constraint(equalTo: self.leftAnchor),
             mainView.rightAnchor.constraint(equalTo: self.rightAnchor),
-            mainView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
-        ])
+            mainView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
 
-        NSLayoutConstraint.activate([
             mainBackgroundImage.topAnchor.constraint(equalTo: self.topAnchor),
             mainBackgroundImage.leftAnchor.constraint(equalTo: self.leftAnchor),
             mainBackgroundImage.rightAnchor.constraint(equalTo: self.rightAnchor),
-            mainBackgroundImage.bottomAnchor.constraint(equalTo: self.bottomAnchor)
-        ])
+            mainBackgroundImage.bottomAnchor.constraint(equalTo: self.bottomAnchor),
 
-        NSLayoutConstraint.activate([
             labeledStackView.leftAnchor.constraint(equalTo: mainView.leftAnchor, constant: 32),
             labeledStackView.rightAnchor.constraint(equalTo: mainView.rightAnchor, constant: -32),
             labeledStackView.centerYAnchor.constraint(equalTo: mainView.centerYAnchor)
@@ -236,12 +251,13 @@ extension LoginView: CodeView {
         createAccountButton.setTitle("Criar uma conta", for: .normal)
         helpButton.setTitle("Ajuda    ", for: .normal)
 
-        loginButton.addTarget(self, action: #selector(abc), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(executeLogin), for: .touchUpInside)
     }
 
-    @objc private func abc() {
-        print("===>> logando... <<===")
+    @objc private func executeLogin() {
         loginButton.backgroundColor = .systemTeal
+        delegate?.didTapLogin()
+
     }
 
 }

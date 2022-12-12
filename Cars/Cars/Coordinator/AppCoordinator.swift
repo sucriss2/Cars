@@ -25,13 +25,28 @@ class AppCoordinator: Coordinator {
         windows?.rootViewController = navigationController
         windows?.makeKeyAndVisible()
 
-        let loginCoordinator = LoginCoordinator(navigationController: navigationController)
+        let loginCoordinator = LoginCoordinator(navigationController: navigationController, delegate: self)
         loginCoordinator.start()
         childCoordinator = loginCoordinator
 
-//        let detailCoordinator = DetailCarCoordinator(navigationController: navigationController)
-//        detailCoordinator.start()
-//        childCoordinator = detailCoordinator
+    }
+
+    fileprivate func showListCarsCoordinator() {
+        navigationController = UINavigationController()
+        windows?.rootViewController = navigationController
+        windows?.makeKeyAndVisible()
+
+        let listCoordinator = ListCarsCoordinator(navigationController: navigationController)
+        listCoordinator.start()
+        childCoordinator = listCoordinator
+
+    }
+
+}
+
+extension AppCoordinator: LoginCoordinatorDelegate {
+    func showListCarsCoord() {
+        showListCarsCoordinator()
     }
 
 }
