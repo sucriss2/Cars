@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ListCarsTableViewCell: UITableViewCell {
 
@@ -18,7 +19,6 @@ class ListCarsTableViewCell: UITableViewCell {
         label.textColor = .black
         label.numberOfLines = 2
         label.font = .systemFont(ofSize: 18, weight: .semibold)
-        label.backgroundColor = .white
         return label
     }()
 
@@ -36,7 +36,6 @@ class ListCarsTableViewCell: UITableViewCell {
         view.distribution = .fill
         view.axis = .horizontal
         view.spacing = 16
-        view.backgroundColor = .white
         view.isLayoutMarginsRelativeArrangement = true
         view.layoutMargins = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -46,11 +45,9 @@ class ListCarsTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = .cyan
         cellStackView.addArrangedSubview(photoImageView)
         cellStackView.addArrangedSubview(nameLabel)
         contentView.addSubview(cellStackView)
-        backgroundColor = .lightGray
         configConstraints()
     }
 
@@ -58,9 +55,10 @@ class ListCarsTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    public func configure(name: String, photo: String) {
-        nameLabel.text = name
-        photoImageView.image = UIImage(named: photo)
+    public func configure(model: Car) {
+        nameLabel.text = model.name
+        let url = URL(string: model.urlPhoto ?? "")
+        self.photoImageView.kf.setImage(with: url)
     }
 
     override func prepareForReuse() {

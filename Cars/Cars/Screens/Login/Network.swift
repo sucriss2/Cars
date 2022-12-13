@@ -28,7 +28,6 @@ class Network {
     ) {
 
         guard let url = URL(string: request.baseURL + request.path) else { return }
-        print(url.absoluteString)
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = request.method.rawValue
         urlRequest.httpBody = request.body

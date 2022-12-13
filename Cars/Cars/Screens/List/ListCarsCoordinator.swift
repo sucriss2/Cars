@@ -9,6 +9,7 @@ import UIKit
 
 class ListCarsCoordinator: Coordinator {
     var navigationController: UINavigationController!
+    private var childCoordinator: DetailCarCoordinator?
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -20,8 +21,25 @@ class ListCarsCoordinator: Coordinator {
     }
 
     private func makeLoginViewController() -> ListCarsViewController {
+        let model = ListCarsModel()
+        let service = ListCarsService()
         let viewController = ListCarsViewController()
+
+        viewController.model = model
+        model.service = service
+        model.delegate = viewController
+        viewController.delegate =  self
+
         return viewController
+    }
+
+}
+
+extension ListCarsCoordinator: ListCarsViewControllerDelegate {
+    func showDetailCar(car: Car) {
+        let detailCarCoordinator = DetailCarCoordinator(navigationController: navigationController)
+        detailCarCoordinator.start()
+        childCoordinator = detailCarCoordinator
     }
 
 }

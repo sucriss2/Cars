@@ -60,7 +60,6 @@ extension LoginViewController: LoginViewDelegate {
     func didTapLogin() {
         if self.validateForm() {
             showLoading()
-            print("Qualquer coisa")
             self.model?.login(username: self.screen.userName, password: self.screen.password)
         }
     }

@@ -23,11 +23,6 @@ class LoginModel {
     }
 
     func login(username: String, password: String) {
-//
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
-//            self?.delegate?.loginFail(message: "asdfsfsdfds")
-//        }
-
         service?.login(
             username: username,
             password: password,
@@ -42,10 +37,6 @@ class LoginModel {
         )
 
     }
-    
-
-    
-    
 
 
 }

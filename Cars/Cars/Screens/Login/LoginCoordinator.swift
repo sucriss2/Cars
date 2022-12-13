@@ -15,9 +15,9 @@ class LoginCoordinator: Coordinator {
     var navigationController: UINavigationController!
     weak var loginDelegate: LoginCoordinatorDelegate?
 
-    init(navigationController: UINavigationController, delegate: LoginCoordinatorDelegate) {
+    init(navigationController: UINavigationController, loginDelegate: LoginCoordinatorDelegate) {
         self.navigationController = navigationController
-        self.loginDelegate = delegate
+        self.loginDelegate = loginDelegate
     }
 
     func start() {

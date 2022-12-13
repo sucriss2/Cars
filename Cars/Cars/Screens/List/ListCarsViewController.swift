@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ListCarsViewControllerDelegate: AnyObject {
+    func showDetailCar(car: Car)
+}
+
 class ListCarsViewController: UIViewController {
 
     lazy var tableview: UITableView = {
@@ -19,11 +23,19 @@ class ListCarsViewController: UIViewController {
         return tableView
     }()
 
+    weak var delegate: ListCarsViewControllerDelegate?
+    var model: ListCarsModel?
+    var cars: [Car] {
+        model?.cars ?? []
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableview.backgroundColor = .purple
+        title = "Carros"
+        tableview.backgroundColor = .white
         view.addSubview(tableview)
         configConstraints()
+        model?.load()
     }
 
     override func viewDidLayoutSubviews() {
@@ -45,7 +57,7 @@ class ListCarsViewController: UIViewController {
 extension ListCarsViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
+        return cars.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -54,18 +66,34 @@ extension ListCarsViewController: UITableViewDelegate, UITableViewDataSource {
         ) as? ListCarsTableViewCell else {
             fatalError()
         }
-        cell.configure(
-            name: "Custom + \(indexPath.row+1)",
-            photo: indexPath.row % 2 == 0 ? "placeholder" : "car")
+        let car = cars[indexPath.row]
+        cell.configure(model: car)
         return cell
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 80
     }
 
-
-
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let car = cars[indexPath.row]
+        delegate?.showDetailCar(car: car)
+    }
 
 }
+
+extension ListCarsViewController: ListCarsModelDelegate {
+    func didLoadSucess() {
+        DispatchQueue.main.async {
+            self.tableview.reloadData()
+        }
+    }
+
+    func didError(message: String) {
+        DispatchQueue.main.async {
+            print(message)
+        }
+    }
+
+}
+
