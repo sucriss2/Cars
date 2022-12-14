@@ -6,6 +6,12 @@
 //
 
 import UIKit
+import MapKit
+import SafariServices
+
+protocol DetailCarViewDelegate: AnyObject {
+    func showVideoDetail()
+}
 
 public final class DetailCarView: UIView {
 
@@ -16,19 +22,9 @@ public final class DetailCarView: UIView {
         return view
     }()
 
-    private let titleLabel: UILabel = {
-        let label = UILabel(frame: .zero)
-        label.text = "Detalhes"
-        label.textColor = .black
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-
     let photoImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
-        imageView.image = UIImage(named: "car")
+        //imageView.image = UIImage(named: "car")
         imageView.contentMode = .scaleToFill
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -86,7 +82,9 @@ public final class DetailCarView: UIView {
     private let nameInfoText = InfoLabel(title: "nome", subtitle: "")
     private let typeInfoText = InfoLabel(title: "tipo", subtitle: "")
     private let descriptionInfoText = InfoLabel(title: "descrição", subtitle: "")
-    let mapView = MapView()
+    private let mapView = MapView()
+
+    weak var delegate: DetailCarViewDelegate?
 
     var name: String? {
         didSet {
@@ -106,6 +104,16 @@ public final class DetailCarView: UIView {
         }
     }
 
+    var map: MKMapView {
+        return mapView.mapaMapView
+    }
+
+//    var photo: UIImageView? {
+//        didSet {
+//            photoImageView.image = UIImage(named: photo)
+//        }
+//    }
+
     init() {
         super.init(frame: .zero)
         setupView()
@@ -120,7 +128,6 @@ public final class DetailCarView: UIView {
 extension DetailCarView: CodeView {
     func buidViewHierarchy() {
         addSubview(detailView)
-        detailView.addSubview(titleLabel)
         principalStackView.addArrangedSubview(photoImageView)
         infolabelStackView.addArrangedSubview(nameInfoText)
         infolabelStackView.addArrangedSubview(typeInfoText)
@@ -140,10 +147,6 @@ extension DetailCarView: CodeView {
             showVideoButton.heightAnchor.constraint(equalToConstant: 44),
             buttonStackView.widthAnchor.constraint(equalToConstant: 150),
 
-            titleLabel.topAnchor.constraint(equalTo: detailView.safeAreaLayoutGuide.topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: detailView.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            titleLabel.trailingAnchor.constraint(equalTo: detailView.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-
             photoImageView.widthAnchor.constraint(equalTo: principalStackView.widthAnchor),
             photoImageView.heightAnchor.constraint(equalToConstant: 150),
 
@@ -155,7 +158,7 @@ extension DetailCarView: CodeView {
             detailView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             detailView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
 
-            principalStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30),
+            principalStackView.topAnchor.constraint(equalTo: detailView.topAnchor, constant: 80),
             principalStackView.leadingAnchor.constraint(equalTo: detailView.leadingAnchor, constant: 8),
             principalStackView.trailingAnchor.constraint(equalTo: detailView.trailingAnchor, constant: -8),
             principalStackView.bottomAnchor.constraint(equalTo: detailView.bottomAnchor, constant: -100)
@@ -164,7 +167,12 @@ extension DetailCarView: CodeView {
     }
 
     func setupAdditionConfiguration() {
+        showVideoButton.addTarget(self, action: #selector(showVideo), for: .touchUpInside)
+    }
 
+    @objc private func showVideo() {
+        showVideoButton.backgroundColor = .white
+        delegate?.showVideoDetail()
     }
 
 }

@@ -16,10 +16,6 @@ final class MapView: UIView {
         view.isHidden = false
         view.backgroundColor = .red
         view.contentMode = .scaleToFill
-//        view.isZoomEnabled = true
-//        view.showsCompass = true
-//        view.isScrollEnabled = true
-//        view.isRotateEnabled = true
         return view
     }()
 
@@ -32,12 +28,12 @@ final class MapView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func configurationMap() {
-        let coords = CLLocationCoordinate2D(latitude: 34.011_286, longitude: -116.166_868)
-        let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
-        let region = MKCoordinateRegion(center: coords, span: span)
-        mapaMapView.region = region
-    }
+//    func configurationMap() {
+//        let coords = CLLocationCoordinate2D(latitude: 34.011_286, longitude: -116.166_868)
+//        let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
+//        let region = MKCoordinateRegion(center: coords, span: span)
+//        mapaMapView.region = region
+//    }
 
 }
 

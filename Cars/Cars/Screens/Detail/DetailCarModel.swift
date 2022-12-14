@@ -42,6 +42,14 @@ class DetailCarModel {
         return Double(car.longitude ?? "") ?? 0.0
     }
 
+    var hasCoordinates: Bool {
+        return car.latitude != nil && car.longitude != nil
+    }
+
+    var hasVideo: Bool {
+        return car.urlVideo != nil
+    }
+
     init(car: Car) {
         self.car = car
     }
