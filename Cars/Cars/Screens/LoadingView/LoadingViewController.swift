@@ -64,10 +64,8 @@ extension LoadingViewController: CodeView {
             viewLoading.topAnchor.constraint(equalTo: self.view.topAnchor),
             viewLoading.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             viewLoading.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            viewLoading.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
-        ])
-
-        NSLayoutConstraint.activate([
+            viewLoading.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            
             containerView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             containerView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
             containerView.heightAnchor.constraint(equalToConstant: 90),

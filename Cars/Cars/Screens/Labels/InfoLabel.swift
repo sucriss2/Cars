@@ -9,9 +9,8 @@ import UIKit
 
 final class InfoLabel: UIView {
 
-    let textLabel: UILabel = {
+    private lazy var textLabel: UILabel = {
         let label = UILabel(frame: .zero)
-        label.text = ""
         label.textColor = .black
         label.numberOfLines = 0
         label.textAlignment = .right
@@ -20,33 +19,30 @@ final class InfoLabel: UIView {
         return label
     }()
 
-    let subTextLabel: UILabel = {
+    private lazy var subTextLabel: UILabel = {
         let label = UILabel(frame: .zero)
-        label.text = ""
         label.textColor = .black
-        label.numberOfLines = 1
-        label.lineBreakMode = .byTruncatingTail
+        label.numberOfLines = 0
         label.font = .systemFont(ofSize: 17, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
-    let labelStackView: UIStackView = {
-        let view = UIStackView(frame: .zero)
-        view.axis = .horizontal
-//        view.backgroundColor = .blue
-        view.spacing = 4
-        view.alignment = .fill
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
+    var title: String {
+        didSet {
+            textLabel.text = title
+        }
+    }
 
-    let text: String
-    let subText: String
+    var subtitle: String {
+        didSet {
+            subTextLabel.text = subtitle
+        }
+    }
 
-    init(text: String, subText: String) {
-        self.text = text
-        self.subText = subText
+    init(title: String, subtitle: String) {
+        self.title = title
+        self.subtitle = subtitle
         super.init(frame: .zero)
         setupView()
     }
@@ -59,30 +55,30 @@ final class InfoLabel: UIView {
 
 extension InfoLabel: CodeView {
     func buidViewHierarchy() {
-        labelStackView.addArrangedSubview(textLabel)
-        labelStackView.addArrangedSubview(subTextLabel)
-        addSubview(labelStackView)
+        addSubview(textLabel)
+        addSubview(subTextLabel)
     }
 
     func setupConstraints() {
 
         NSLayoutConstraint.activate([
-            textLabel.widthAnchor.constraint(equalToConstant: 80)
-        ])
+            textLabel.widthAnchor.constraint(equalToConstant: 100),
+            textLabel.topAnchor.constraint(equalTo: self.topAnchor),
+            textLabel.leftAnchor.constraint(equalTo: self.leftAnchor),
+            textLabel.bottomAnchor.constraint(lessThanOrEqualTo: self.bottomAnchor),
 
-        NSLayoutConstraint.activate([
-            labelStackView.topAnchor.constraint(equalTo: self.topAnchor),
-            labelStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            labelStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            labelStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            subTextLabel.topAnchor.constraint(equalTo: textLabel.topAnchor),
+            subTextLabel.rightAnchor.constraint(equalTo: self.rightAnchor),
+            subTextLabel.bottomAnchor.constraint(lessThanOrEqualTo: self.bottomAnchor),
+            subTextLabel.leftAnchor.constraint(equalTo: textLabel.rightAnchor, constant: 8.0)
         ])
 
     }
 
     func setupAdditionConfiguration() {
-        textLabel.text = text
-        subTextLabel.text = subText
-    }
+        textLabel.text = title
+        subTextLabel.text = subtitle
 
+    }
 
 }

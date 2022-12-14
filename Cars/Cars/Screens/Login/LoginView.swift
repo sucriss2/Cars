@@ -160,11 +160,23 @@ public final class LoginView: UIView, UITextFieldDelegate {
     weak var delegate: LoginViewDelegate?
 
     var userName: String {
-        return loginTextFieldView.text ?? ""
+        get{
+            return loginTextFieldView.text ?? ""
+        }
+
+        set {
+            loginTextFieldView.text = newValue
+        }
     }
 
     var password: String {
-        return passwordTextFieldView.text ?? ""
+        get {
+            return passwordTextFieldView.text ?? ""
+        }
+
+        set {
+            passwordTextFieldView.text = newValue
+        }
     }
 
     var startLoginButton: UIButton {

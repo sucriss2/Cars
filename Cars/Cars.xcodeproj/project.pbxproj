@@ -36,6 +36,7 @@
 		8C52827F293A9139004F7CEF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C52827E293A9139004F7CEF /* User.swift */; };
 		8C528281293A9140004F7CEF /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C528280293A9140004F7CEF /* UserSession.swift */; };
 		8C528283293A917C004F7CEF /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C528282293A917B004F7CEF /* Login.swift */; };
+		8C6DBBA12948C2C500F73FFC /* DetailCarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6DBBA02948C2C500F73FFC /* DetailCarModel.swift */; };
 		8C9CE1A12937A1200055F265 /* LabeledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CE1A02937A1200055F265 /* LabeledTextField.swift */; };
 		8C9CE1A32937A1340055F265 /* UnderlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CE1A22937A1340055F265 /* UnderlinedButton.swift */; };
 		8C9CE1A52937A1540055F265 /* ListCarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9CE1A42937A1540055F265 /* ListCarsViewController.swift */; };
@@ -115,6 +116,7 @@
 		8C52827E293A9139004F7CEF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8C528280293A9140004F7CEF /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		8C528282293A917B004F7CEF /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		8C6DBBA02948C2C500F73FFC /* DetailCarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCarModel.swift; sourceTree = "<group>"; };
 		8C9CE1A02937A1200055F265 /* LabeledTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LabeledTextField.swift; path = Cars/TextFields/LabeledTextField.swift; sourceTree = SOURCE_ROOT; };
 		8C9CE1A22937A1340055F265 /* UnderlinedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnderlinedButton.swift; path = Cars/Buttons/UnderlinedButton.swift; sourceTree = SOURCE_ROOT; };
 		8C9CE1A42937A1540055F265 /* ListCarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCarsViewController.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 			children = (
 				8CFC357D2938FCDF00B1230A /* DetailCarCoordinator.swift */,
 				8CFC357B2938FCCE00B1230A /* DetailCarViewController.swift */,
+				8C6DBBA02948C2C500F73FFC /* DetailCarModel.swift */,
 				8CFC35782938FBC100B1230A /* DetailCarView.swift */,
 			);
 			path = Detail;
@@ -479,6 +482,7 @@
 				8C500232293502D3003A5774 /* LoginCoordinator.swift in Sources */,
 				8C1EAF1D2942214E00AFCA0F /* LoadingViewController.swift in Sources */,
 				8CD9E84C2947ADDE00F7DDA6 /* ListCarsModel.swift in Sources */,
+				8C6DBBA12948C2C500F73FFC /* DetailCarModel.swift in Sources */,
 				8C50022E2934FAD0003A5774 /* Coordinator.swift in Sources */,
 				8C5002022934F9ED003A5774 /* LoginViewController.swift in Sources */,
 				8C50027629354A46003A5774 /* LoginView.swift in Sources */,

@@ -9,14 +9,14 @@ import UIKit
 
 public final class DetailCarView: UIView {
 
-    let detailView: UIView = {
+    private let detailView: UIView = {
         let view = UIView(frame: .zero)
         view.backgroundColor = .systemGray6
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
-    let titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.text = "Detalhes"
         label.textColor = .black
@@ -35,7 +35,7 @@ public final class DetailCarView: UIView {
         return imageView
     }()
 
-    let principalStackView: UIStackView = {
+    private let principalStackView: UIStackView = {
         let view = UIStackView(frame: .zero)
         view.axis = .vertical
         view.distribution = .equalSpacing
@@ -45,7 +45,7 @@ public final class DetailCarView: UIView {
         return view
     }()
 
-    let infolabelStackView: UIStackView = {
+    private let infolabelStackView: UIStackView = {
         let view = UIStackView(frame: .zero)
         view.axis = .vertical
         view.spacing = 8
@@ -57,7 +57,7 @@ public final class DetailCarView: UIView {
         return view
     }()
 
-    let showVideoButton: UIButton = {
+    private let showVideoButton: UIButton = {
         let view = UIButton(frame: .zero)
         view.backgroundColor = .black
         view.layer.cornerRadius = 8.0
@@ -74,7 +74,7 @@ public final class DetailCarView: UIView {
         return view
     }()
 
-    let buttonStackView: UIStackView = {
+    private let buttonStackView: UIStackView = {
         let view = UIStackView(frame: .zero)
         view.axis = .horizontal
         view.distribution = .fill
@@ -83,10 +83,28 @@ public final class DetailCarView: UIView {
         return view
     }()
 
-    let nameInfoText = InfoLabel(text: "nome", subText: "Ferrari")
-    let typeInfoText = InfoLabel(text: "tipo", subText: "Ferrari")
-    let descriptionInfoText = InfoLabel(text: "descrição", subText: "Hghkfutsrtseaathh  a jsgfoq")
+    private let nameInfoText = InfoLabel(title: "nome", subtitle: "")
+    private let typeInfoText = InfoLabel(title: "tipo", subtitle: "")
+    private let descriptionInfoText = InfoLabel(title: "descrição", subtitle: "")
     let mapView = MapView()
+
+    var name: String? {
+        didSet {
+            nameInfoText.subtitle = name ?? ""
+        }
+    }
+
+    var type: String? {
+        didSet{
+            typeInfoText.subtitle = type ?? ""
+        }
+    }
+
+    var descriptionCar: String? {
+        didSet {
+            descriptionInfoText.subtitle = descriptionCar ?? ""
+        }
+    }
 
     init() {
         super.init(frame: .zero)
@@ -118,38 +136,29 @@ extension DetailCarView: CodeView {
     func setupConstraints() {
 
         NSLayoutConstraint.activate([
-            showVideoButton.heightAnchor.constraint(equalToConstant: 44),
-            buttonStackView.widthAnchor.constraint(equalToConstant: 150)
-        ])
 
-        NSLayoutConstraint.activate([
+            showVideoButton.heightAnchor.constraint(equalToConstant: 44),
+            buttonStackView.widthAnchor.constraint(equalToConstant: 150),
+
             titleLabel.topAnchor.constraint(equalTo: detailView.safeAreaLayoutGuide.topAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: detailView.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            titleLabel.trailingAnchor.constraint(equalTo: detailView.safeAreaLayoutGuide.trailingAnchor, constant: -20)
-        ])
+            titleLabel.trailingAnchor.constraint(equalTo: detailView.safeAreaLayoutGuide.trailingAnchor, constant: -20),
 
-        NSLayoutConstraint.activate([
             photoImageView.widthAnchor.constraint(equalTo: principalStackView.widthAnchor),
-            photoImageView.heightAnchor.constraint(equalToConstant: 150)
-        ])
+            photoImageView.heightAnchor.constraint(equalToConstant: 150),
 
-        NSLayoutConstraint.activate([
             mapView.widthAnchor.constraint(equalTo: principalStackView.widthAnchor),
-            mapView.heightAnchor.constraint(equalToConstant: 120)
-        ])
+            mapView.heightAnchor.constraint(equalToConstant: 120),
 
-        NSLayoutConstraint.activate([
             detailView.topAnchor.constraint(equalTo: self.topAnchor),
             detailView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             detailView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            detailView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
-        ])
+            detailView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
 
-        NSLayoutConstraint.activate([
             principalStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30),
             principalStackView.leadingAnchor.constraint(equalTo: detailView.leadingAnchor, constant: 8),
             principalStackView.trailingAnchor.constraint(equalTo: detailView.trailingAnchor, constant: -8),
-            principalStackView.bottomAnchor.constraint(equalTo: detailView.bottomAnchor, constant: -130)
+            principalStackView.bottomAnchor.constraint(equalTo: detailView.bottomAnchor, constant: -100)
         ])
 
     }

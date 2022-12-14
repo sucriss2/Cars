@@ -8,10 +8,12 @@
 import UIKit
 
 class DetailCarCoordinator: Coordinator {
+    private var car: Car
     var navigationController: UINavigationController!
 
-    init(navigationController: UINavigationController) {
+    init(car: Car, navigationController: UINavigationController) {
         self.navigationController = navigationController
+        self.car = car
     }
 
     func start() {
@@ -20,7 +22,13 @@ class DetailCarCoordinator: Coordinator {
     }
 
     private func makeLoginViewController() -> DetailCarViewController {
+        let model = DetailCarModel(car: car)
+        let screen = DetailCarView()
         let viewController = DetailCarViewController()
+
+        viewController.model = model
+        viewController.screen = screen
+
         return viewController
     }
 

@@ -37,7 +37,7 @@ class ListCarsCoordinator: Coordinator {
 
 extension ListCarsCoordinator: ListCarsViewControllerDelegate {
     func showDetailCar(car: Car) {
-        let detailCarCoordinator = DetailCarCoordinator(navigationController: navigationController)
+        let detailCarCoordinator = DetailCarCoordinator(car: car, navigationController: navigationController)
         detailCarCoordinator.start()
         childCoordinator = detailCarCoordinator
     }

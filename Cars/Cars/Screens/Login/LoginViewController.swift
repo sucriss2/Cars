@@ -33,6 +33,8 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        screen.userName = "User"
+        screen.password = "123"
     }
 
     private func validateForm() -> Bool {
