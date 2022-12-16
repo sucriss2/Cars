@@ -5,14 +5,14 @@
 //  Created by Suh on 30/11/22.
 //
 
-//import UIKit
-//import Quick
-//import Nimble
-//import Nimble_Snapshots
+// import UIKit
+// import Quick
+// import Nimble
+// import Nimble_Snapshots
 //
-//@testable import Cars
+// @testable import Cars
 //
-//class ListCellSpec: QuickSpec {
+// class ListCellSpec: QuickSpec {
 //    override func spec() {
 //        describe("the 'UI'      ") {
 //            it("should have the expected look and feel") {
@@ -22,4 +22,4 @@
 //            }
 //        }
 //    }
-//}
+// }

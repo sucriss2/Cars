@@ -42,9 +42,9 @@ final class UnderlinedButton: UIButton {
         let atributedString = NSAttributedString(
             string: title ?? "",
             attributes: [
-                NSAttributedString.Key.underlineStyle : NSUnderlineStyle.single.rawValue,
-                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12),
-                NSAttributedString.Key.foregroundColor : color
+                NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue,
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12),
+                NSAttributedString.Key.foregroundColor: color
             ]
         )
 

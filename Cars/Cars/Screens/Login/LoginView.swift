@@ -29,7 +29,6 @@ public final class LoginView: UIView, UITextFieldDelegate {
         return image
     }()
 
-
     private let titleLabel: UILabel = {
         let view = UILabel(frame: .zero)
         view.text = "Carros"
@@ -131,11 +130,12 @@ public final class LoginView: UIView, UITextFieldDelegate {
     private let helpStackView: UIStackView = {
         let view = UIStackView(frame: .zero)
         view.axis = .horizontal
-        view.distribution = .fill
+        view.distribution = .fillProportionally
         view.alignment = .fill
+        view.center = .zero
         view.spacing = 0
         view.isLayoutMarginsRelativeArrangement = true
-        view.layoutMargins = UIEdgeInsets(top: 0, left: 100, bottom: 8, right: 100)
+        view.layoutMargins = UIEdgeInsets(top: 0, left: 130, bottom: 8, right: 130)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -149,7 +149,6 @@ public final class LoginView: UIView, UITextFieldDelegate {
         return view
     }()
 
-
     private let loginTextFieldView = LabeledTextField(title: "Login", placeholder: "Digite seu login")
     private let passwordTextFieldView = LabeledTextField(title: "Senha", placeholder: "Digite sua senha")
     private let lostPasswordButton = UnderlinedButton(style: .primary)
@@ -160,7 +159,7 @@ public final class LoginView: UIView, UITextFieldDelegate {
     weak var delegate: LoginViewDelegate?
 
     var userName: String {
-        get{
+        get {
             return loginTextFieldView.text ?? ""
         }
 
@@ -237,9 +236,9 @@ extension LoginView: CodeView {
 
             titleLabel.heightAnchor.constraint(equalToConstant: 60),
 
-            helpButton.widthAnchor.constraint(equalToConstant: 100),
-
             loginButton.heightAnchor.constraint(equalToConstant: 44),
+
+            helpIconImage.widthAnchor.constraint(equalTo: helpIconImage.heightAnchor),
 
             mainView.topAnchor.constraint(equalTo: self.topAnchor),
             mainView.leftAnchor.constraint(equalTo: self.leftAnchor),
@@ -261,7 +260,7 @@ extension LoginView: CodeView {
     func setupAdditionConfiguration() {
         lostPasswordButton.setTitle("Esqueci a senha", for: .normal)
         createAccountButton.setTitle("Criar uma conta", for: .normal)
-        helpButton.setTitle("Ajuda    ", for: .normal)
+        helpButton.setTitle("Ajuda", for: .normal)
 
         loginButton.addTarget(self, action: #selector(executeLogin), for: .touchUpInside)
     }

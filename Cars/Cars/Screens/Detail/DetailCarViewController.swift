@@ -33,7 +33,7 @@ class DetailCarViewController: UIViewController {
         }
 
         screen?.photoImageView.kf.setImage(with: model.carPhoto)
-        //screen?.photo?.kf.setImage(with: model.carPhoto)
+        // screen?.photo?.kf.setImage(with: model.carPhoto)
         screen?.name = model.carName
         screen?.type = model.carType
         screen?.descriptionCar = model.carDescription
@@ -64,6 +64,5 @@ extension DetailCarViewController: DetailCarViewDelegate {
         }
         delegate?.showVideo(url: model.carVideo)
     }
-    
-}
 
+}

@@ -32,8 +32,6 @@ class ListCarsModel {
             onError: { error in
                 self.delegate?.didError(message: "\(error.localizedDescription)")
             })
-
     }
-
 
 }

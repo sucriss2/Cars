@@ -24,7 +24,7 @@ public final class DetailCarView: UIView {
 
     let photoImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
-        //imageView.image = UIImage(named: "car")
+        // imageView.image = UIImage(named: "car")
         imageView.contentMode = .scaleToFill
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -93,7 +93,7 @@ public final class DetailCarView: UIView {
     }
 
     var type: String? {
-        didSet{
+        didSet {
             typeInfoText.subtitle = type ?? ""
         }
     }

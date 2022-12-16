@@ -85,4 +85,3 @@ extension LoginViewController: LoginModelDelegate {
         }
     }
 }
-

@@ -46,6 +46,5 @@ extension DetailCarCoordinator: DetailCarViewControllerDelegate {
     func showVideo(url: URL) {
         makeVideoController(url: url)
     }
-    
-}
 
+}

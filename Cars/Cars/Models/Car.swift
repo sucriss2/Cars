@@ -3,7 +3,7 @@
 //  Cars
 //
 //  Created by Suh on 02/12/22.
-//
+//  swiftlint:disable line_length
 
 import Foundation
 
@@ -39,8 +39,16 @@ extension Car {
         latitude: String? = nil,
         longitude: String? = nil
     ) -> Car {
-        Car(id: id, name: name, type: type, description: description, urlPhoto: urlPhoto, urlVideo: urlVideo, latitude: latitude, longitude: longitude)
+        Car(
+            id: id,
+            name: name,
+            type: type,
+            description: description,
+            urlPhoto: urlPhoto,
+            urlVideo: urlVideo,
+            latitude: latitude,
+            longitude: longitude
+        )
     }
 }
 #endif
-

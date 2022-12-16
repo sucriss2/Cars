@@ -3,7 +3,7 @@
 //  CarsTests
 //
 //  Created by Suh on 28/11/22.
-//
+// swiftlint:disable line_length
 
 import XCTest
 @testable import Cars

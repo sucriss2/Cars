@@ -84,7 +84,7 @@ extension LabeledTextField: CodeView {
             viewStack.topAnchor.constraint(equalTo: self.topAnchor, constant: 8),
             viewStack.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16),
             viewStack.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16),
-            viewStack.bottomAnchor.constraint(equalTo: separetorView.topAnchor,constant: -8),
+            viewStack.bottomAnchor.constraint(equalTo: separetorView.topAnchor, constant: -8),
 
             separetorView.heightAnchor.constraint(equalToConstant: 2),
             separetorView.leftAnchor.constraint(equalTo: self.leftAnchor),
@@ -98,6 +98,5 @@ extension LabeledTextField: CodeView {
         textLabel.text = title
         textField.placeholder = placeholder
     }
-
 
 }
